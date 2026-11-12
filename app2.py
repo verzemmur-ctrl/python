@@ -26,14 +26,14 @@ while True:
         old_data = mytools.load_json(file_name)
         old_data.append(workout)
         mytools.save_json(file_name, old_data)
-        print("Записал тренировку!")
+        print("Тренировка сохранена")
         
     elif cmd == "2":
         print("--- Все тренировки ---")
         data = mytools.load_json(file_name)
         
         if len(data) == 0:
-            print("Тут пусто, я еще не тренировался.")
+            print("Пока пусто.")
         else:
             for w in data:
                 print(w["type"], "-", w["minutes"], "минут")
@@ -46,11 +46,12 @@ while True:
         for w in data:
             total_time = total_time + w["minutes"]
             
-        print("Я потренировался в сумме на", total_time, "минут!")
+        print("Я потренировался в сумме на", total_time, "минут. (какой я молодец)")
         
     elif cmd == "0":
-        print("Всем пока, пойду тренироваться!")
+        print("Иду тренироваться")
         break
         
     else:
         print("Ошибка, нет такого пункта.")
+
