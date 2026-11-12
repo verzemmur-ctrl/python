@@ -25,14 +25,14 @@ while True:
         data.append(new_expense)
         
         mytools.save_json(path, data)
-        print("Успешно сохранил!")
+        print("Успешно сохранилось.")
         
     elif choice == "2":
         print("\nВсе мои расходы:")
         data = mytools.load_json(path)
         
         if len(data) == 0:
-            print("Пока пусто, я ничего не тратил.")
+            print("Пока пусто, ничего не потрачено.")
         else:
             
             for item in data:
@@ -55,7 +55,7 @@ while True:
             print("Итого по категории:", mytools.format_money(total))
             
     elif choice == "0":
-        print("Пока! Закрываю калькулятор.")
+        print("Закрываю калькулятор.")
         break
     else:
-        print("Ой, нет такой цифры в меню. Попробуй еще раз.")
+        print("Нет такой цифры в меню. Попробуй еще раз.")
